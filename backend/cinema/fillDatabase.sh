@@ -1,0 +1,55 @@
+curl -X POST http://localhost:8080/room/add -H 'Content-Type: application/json' -d '{"seatRows": 9,"seatsInRow": 9}'
+curl -X POST http://localhost:8080/room/add -H 'Content-Type: application/json' -d '{"seatRows": 8,"seatsInRow": 8}'
+curl -X POST http://localhost:8080/room/add -H 'Content-Type: application/json' -d '{"seatRows": 7,"seatsInRow": 7}'
+curl -X POST http://localhost:8080/room/add -H 'Content-Type: application/json' -d '{"seatRows": 5,"seatsInRow": 5}'
+curl -X POST http://localhost:8080/room/add -H 'Content-Type: application/json' -d '{"seatRows": 3,"seatsInRow": 9}'
+
+curl -X POST http://localhost:8080/movie/add -H 'Content-Type: application/json' -d '{"title": "Avatar: Revenge", "shortTitle": "A"}'
+curl -X POST http://localhost:8080/movie/add -H 'Content-Type: application/json' -d '{"title": "James Bond 33", "shortTitle": "JB"}'
+curl -X POST http://localhost:8080/movie/add -H 'Content-Type: application/json' -d '{"title": "Fast & Furious", "shortTitle": "FF"}'
+curl -X POST http://localhost:8080/movie/add -H 'Content-Type: application/json' -d '{"title": "Power Rangers", "shortTitle": "PR"}'
+curl -X POST http://localhost:8080/movie/add -H 'Content-Type: application/json' -d '{"title": "Advanced Java", "shortTitle": "AJ"}'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 1, "screeningTime": "2023-07-24 10:00" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 2, "screeningTime": "2023-07-24 11:15" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 3, "screeningTime": "2023-07-24 13:00" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 4, "screeningTime": "2023-07-24 15:00" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 5, "screeningTime": "2023-07-24 19:30" }'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 5, "screeningTime": "2023-07-25 10:00" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 5, "screeningTime": "2023-07-25 11:15" }'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 5, "screeningTime": "2023-07-26 20:00" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 5, "screeningTime": "2023-07-26 21:15" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 5, "screeningTime": "2023-07-26 21:30" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 1, "roomId": 5, "screeningTime": "2023-07-26 22:15" }'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 2, "screeningTime": "2023-07-24 10:10" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 3, "screeningTime": "2023-07-24 10:15" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 4, "screeningTime": "2023-07-24 12:00" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 5, "screeningTime": "2023-07-24 12:15" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 1, "screeningTime": "2023-07-24 19:30" }'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 1, "screeningTime": "2023-07-25 18:00" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 2, "screeningTime": "2023-07-25 19:15" }'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 3, "screeningTime": "2023-07-26 11:00" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 4, "screeningTime": "2023-07-26 12:15" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 1, "screeningTime": "2023-07-26 13:30" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 2, "roomId": 2, "screeningTime": "2023-07-26 14:15" }'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 3, "roomId": 3, "screeningTime": "2023-07-24 10:25" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 3, "roomId": 2, "screeningTime": "2023-07-24 10:45" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 3, "roomId": 1, "screeningTime": "2023-07-24 12:30" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 3, "roomId": 4, "screeningTime": "2023-07-24 13:15" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 3, "roomId": 3, "screeningTime": "2023-07-24 14:30" }'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 4, "roomId": 3, "screeningTime": "2023-07-24 10:25" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 4, "roomId": 2, "screeningTime": "2023-07-24 10:45" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 4, "roomId": 1, "screeningTime": "2023-07-24 12:30" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 4, "roomId": 4, "screeningTime": "2023-07-24 13:15" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 4, "roomId": 3, "screeningTime": "2023-07-24 14:30" }'
+
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 5, "roomId": 5, "screeningTime": "2023-07-24 11:11" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 5, "roomId": 5, "screeningTime": "2023-07-25 11:11" }'
+curl -X POST http://localhost:8080/screening/add -H 'Content-Type: application/json' -d '{"movieId": 5, "roomId": 5, "screeningTime": "2023-07-26 11:11" }'
