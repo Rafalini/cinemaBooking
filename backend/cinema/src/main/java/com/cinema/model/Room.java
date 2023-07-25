@@ -7,6 +7,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import java.io.Serializable;
 
+//Class representing room, it has only information about seats.
+//There is assumption that all rooms are rectangles (there are no breaks in rows or collumns).
 @Entity
 public class Room implements Serializable {
     @Id

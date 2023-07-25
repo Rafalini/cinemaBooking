@@ -101,6 +101,9 @@ public class ReservationController {
         return new ResponseEntity<>(readyReservation, HttpStatus.CREATED);
     }
 
+    //Method runs every minute, checks for reservations that aren't confirmed and deletes them if it is time to do so.
+    //It isn't placed in service, because it refers to other service (reservedSeatService), because there is one direction
+    //reference from reserved seat to screening and cascade deletion on reservation simply won't work.
     @Scheduled(cron = "*/60 * * * * *")
     @Transactional
     public void deleteInactive(){

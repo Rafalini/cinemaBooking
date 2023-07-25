@@ -11,6 +11,8 @@ import jakarta.persistence.JoinColumn;
 
 import java.io.Serializable;
 
+//Splitting reserved seats from reservation entity (and storing them in other table) allows generating statistics,
+//for example most occupied seats, or most watched movie or its screening time
 @Entity
 public class ReservedSeat implements Serializable {
 
