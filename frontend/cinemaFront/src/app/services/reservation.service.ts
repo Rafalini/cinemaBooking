@@ -17,6 +17,7 @@ export class ReservationService{
   }
 
   public getSeats(id:string): Observable<any[]>{
+    console.log(`${this.apiServerUrl}/reservation/seats/`+id)
     return this.http.get<any[]>(`${this.apiServerUrl}/reservation/seats/`+id);
   }
 

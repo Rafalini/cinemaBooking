@@ -33,7 +33,7 @@ public class ReservedSeatService {
     }
 
     public List<ReservedSeat> findReservedSeatByScreeningTime(Long id){
-        return reservedSeatsRepo.findReservedSeatByScreeningTimeId(id)
+        return reservedSeatsRepo.findReservedSeatByScreeningTimeIdOrderBySeatNumberAsc(id)
                 .orElseThrow(() -> new ReservedSeatNotFoundException("Reserved seats for screening "+id+" were not found"));
     }
 

@@ -23,14 +23,12 @@ public class RoomController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Room>> getAllReservations(){
-        List<Room> rooms = roomService.findAllRooms();
-        return new ResponseEntity<>(rooms, HttpStatus.OK);
+    public List<Room> getAllReservations(){
+        return roomService.findAllRooms();
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Room> addRoom(@RequestBody Room room){
-        Room newRoom = roomService.addRoom(room);
-        return new ResponseEntity<>(newRoom, HttpStatus.CREATED);
+    public Room addRoom(@RequestBody Room room){
+        return roomService.addRoom(room);
     }
 }

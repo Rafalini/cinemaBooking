@@ -12,5 +12,5 @@ public interface ScreeningRepo extends JpaRepository<ScreeningTime, Long> {
 
     Optional<List<ScreeningTime>> findScreeningTimeByMovieId(Long id);
 
-    Optional<List<ScreeningTime>> findByScreeningTimeBetween(LocalDateTime start, LocalDateTime end);
+    Optional<List<ScreeningTime>> findByScreeningTimeBetweenOrderByMovie_Title(LocalDateTime start, LocalDateTime end);
 }

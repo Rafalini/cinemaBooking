@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ReservedSeatsRepo extends JpaRepository<ReservedSeat, Long> {
-    Optional<List<ReservedSeat>> findReservedSeatByScreeningTimeId(Long id);
+    Optional<List<ReservedSeat>> findReservedSeatByScreeningTimeIdOrderBySeatNumberAsc(Long id);
     Optional<List<ReservedSeat>> findReservedSeatByReservationId(Long id);
 
     void deleteReservedSeatById(Long id);

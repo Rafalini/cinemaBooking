@@ -26,42 +26,23 @@ import java.time.LocalDate;
 @RequestMapping("/screening")
 public class ScreeningController {
     private final ScreeningService screeningService;
-    private final RoomService roomService;
-    private final MovieService movieService;
 
-    public ScreeningController(ScreeningService screeningService, RoomService roomService,  MovieService movieService) {
+    public ScreeningController(ScreeningService screeningService) {
         this.screeningService = screeningService;
-        this.roomService = roomService;
-        this.movieService = movieService;
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<ScreeningTime>> getScreeningsByDate(@RequestParam LocalDate date){
-        List<ScreeningTime> screenings = null;
-        screenings = screeningService.findScreeningTimeByDate(date);
-        screenings.sort(Comparator.comparing(x -> x.getMovie().getTitle()));
-        return new ResponseEntity<>(screenings, HttpStatus.OK);
+    public List<ScreeningTime> getScreeningsByDate(@RequestParam LocalDate date){
+        return screeningService.findScreeningTimeByDate(date);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<ScreeningTime> addScreeningTime(@RequestBody TemporalScreeningTime screening){
-        ScreeningTime newScreening = new ScreeningTime();
-        try {
-            newScreening.setRoom(roomService.findRoomById(screening.roomId()));
-            newScreening.setMovie(movieService.findMovieById(screening.movieId()));
-        } catch (MovieNotFoundException ex){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Movie ID Not Found", ex);
-        } catch (RoomNotFoundException ex){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Room ID Not Found", ex);
-        }
-        newScreening.setScreeningTime(screening.screeningTime());
-        ScreeningTime readyScreening = screeningService.addScreening(newScreening);
-        return new ResponseEntity<>(readyScreening, HttpStatus.CREATED);
+    public ScreeningTime addScreeningTime(@RequestBody TemporalScreeningTime screening){
+        return screeningService.addScreening(screening);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ScreeningTime> getScreeningTimeById(@PathVariable("id") Long id){
-        ScreeningTime screeningTime = screeningService.findScreeningTimeById(id);
-        return new ResponseEntity<>(screeningTime, HttpStatus.OK);
+    public ScreeningTime getScreeningTimeById(@PathVariable("id") Long id){
+        return screeningService.findScreeningTimeById(id);
     }
 }
